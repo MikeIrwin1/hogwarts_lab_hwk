@@ -1,6 +1,6 @@
 <% @students.each do |student| %>
 <p>Name: <%= student.format_name %> </p>
-<p>House: <%= student.house_id %> </p>
+<p>House: <%= @houses.find(student.house_id) %> </p>
 <p>Age: <%= student.age %> </p>
 <p><a href="/students/<%= student.id %>">Student Details</a></p>
 <hr />

@@ -7,11 +7,15 @@ also_reload('./models/*')
 # index
 get '/students' do
   @students = Student.all()
+  @houses = House.all()
   erb (:index)
 end
 
 # new
 get '/students/new' do
+  # get all houses
+  @houses = House.all()
+  # pass all houses to the erb
   erb (:new)
 end
 # create
@@ -23,6 +27,7 @@ end
 # edit
 get '/students/:id/edit' do
   @student = Student.find( params[:id] )
+  @houses = House.all()
   erb (:edit)
 end
 # update
