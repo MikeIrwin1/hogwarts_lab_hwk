@@ -11,7 +11,7 @@
   <label for="house_select">Select House:</label>
   <select name="house_id" id="house_select">
     <% @houses.each do |house| %>
-      <% if @house.id == @student.house_id %>
+      <% if house.id == @student.house_id %>
         <option value=<%= house.id %> selected><%=house.name%></option>
       <% else %>
         <option value=<%= house.id %>><%=house.name%></option>
